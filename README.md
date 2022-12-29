@@ -3,4 +3,4 @@
 ### Run project
 `npm i`
 
-`gulp` || `npx gulp`
+`npm start`
