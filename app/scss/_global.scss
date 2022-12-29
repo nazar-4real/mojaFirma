@@ -1,0 +1,287 @@
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+
+  &-track {
+    background: #ccc;
+  }
+
+  &-thumb {
+    background: $link-color;
+    border-radius: 8px;
+  }
+}
+
+::selection {
+  color: #fff;
+  background: #222;
+}
+
+html.dark {
+  filter: invert(1);
+
+  img {
+    filter: invert(1);
+  }
+}
+
+body {
+  font-family: "Roboto";
+  font-weight: 700;
+  position: relative;
+  background: #fff;
+  cursor: url(../images/cursors/normal.cur), default;
+
+  &.darken {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+
+    &::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 15;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(#000, 0.5);
+    }
+  }
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+path {
+  transition: all 0.3s;
+}
+
+a,
+button,
+.select2-selection,
+.select2-dropdown * {
+  cursor: url(../images/cursors/link.cur), pointer !important;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 0 auto;
+  margin-top: 130px;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+
+.container {
+  max-width: 1378px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  z-index: 100;
+  overflow: hidden;
+  padding: 0 30px;
+  transition: all 1s;
+  display: none;
+
+  .logo {
+    max-width: 500px;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.hide {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.title {
+  font-size: 60px;
+  line-height: 78px;
+  font-weight: 900;
+  color: $text-color;
+}
+
+.subtitle {
+  font-size: 50px;
+  line-height: 65px;
+  font-weight: 900;
+  color: $text-color;
+  position: relative;
+}
+
+.small-title {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
+  color: $text-color;
+}
+
+.main__link {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: $link-color;
+  font-family: "Roboto";
+  transition: 0.3s all;
+  padding: 10px 14px;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &:hover {
+    background: rgba(246, 21, 94, 0.1);
+  }
+}
+
+// Pulse button click effect
+
+.pulse {
+  background: rgba(246, 21, 94, 0.4);
+  border-radius: 50%;
+  animation: pulse 0.7s ease-out;
+  transform: scale(0);
+  position: absolute;
+}
+
+@keyframes pulse {
+  to {
+    transform: scale(2);
+    background-color: #fff;
+    opacity: 0;
+  }
+}
+
+.main__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0 45px;
+}
+
+.slider-btn {
+  border: none;
+  background: $link-color;
+  padding: 0;
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  outline: none;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateY(-50%) scale(1.15);
+  }
+
+  &.slider-prev {
+    left: -10px;
+  }
+
+  &.slider-next {
+    right: -10px;
+  }
+
+  .slider-icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slider-icon.prev {
+    left: 46%;
+  }
+
+  .slider-icon.next {
+    left: 53%;
+  }
+  
+  &.slick-disabled {
+    display: none !important;
+  }
+}
+
+.to-top {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #f6155e;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all .3s;
+
+  &.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &_img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+    transform: rotate(-90deg);
+  }
+}

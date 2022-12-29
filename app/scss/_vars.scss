@@ -1,0 +1,35 @@
+// Colors
+
+$text-color: #242A30;
+$link-color: #F6155E;
+
+
+// Fonts
+
+%regular-font {
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+
+%medium-font {
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+
+%bold-font {
+  font-family: 'Roboto';
+  font-weight: 700;
+}
+
+%black-font {
+  font-family: 'Roboto';
+  font-weight: 900;
+}
+
+// Background 
+
+%background-default {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

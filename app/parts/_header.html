@@ -1,0 +1,67 @@
+<header class="header">
+  <div class="container">
+    <div class="header__body">
+      <div class="header__logo">
+        <a class="logo" href="#">
+          {% include '../images/logo.svg' %}
+        </a>
+      </div>
+      <nav class="nav">
+        <ul class="nav__menu">
+          <li class="nav__menu-item">
+            <a class="nav__menu-link" href="#articles">
+              Popular
+            </a>
+          </li>
+          <li class="nav__menu-item">
+            <a class="nav__menu-link" href="#new">
+              New
+            </a>
+          </li>
+          <li class="nav__menu-item">
+            <a class="nav__menu-link" href="#life">
+              Selections
+            </a>
+          </li>
+          <li class="nav__menu-item">
+            <a class="nav__menu-link" href="#courses">
+              Courses
+            </a>
+          </li>
+          <li class="nav__menu-item">
+            <a class="nav__menu-link" href="#themes">
+              All topics
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="control">
+        <button class="theme">
+          <img class="theme__icon" src="./images/header/moon.svg" alt="">
+          <span class="theme__name">
+            Night
+          </span>
+        </button>
+        <form class="search" action="./results.html" novalidate>
+          <input class="search__field" type="text" placeholder="Search..." name="search" required>
+          <button class="search__field-close" type="button">
+            <span></span>
+            <span></span>
+          </button>
+          <button class="search__btn" type="submit">
+            {% include '../images/header/search.svg' %}
+          </button>
+        </form>
+        <select class="langs" name="langs">
+          <option class="lang" value="UA">UA</option>
+          <option class="lang" value="EN">EN</option>
+          <option class="lang" value="PL">PL</option>
+        </select>
+      </div>
+      <button class="menu__btn">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
