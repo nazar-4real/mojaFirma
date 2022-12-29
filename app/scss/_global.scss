@@ -273,6 +273,11 @@ button,
   opacity: 0;
   transition: all .3s;
 
+  @media (max-width: 768px) {
+    bottom: 25px;
+    right: 30px;
+  }
+
   &.show {
     transform: translateY(0);
     opacity: 1;

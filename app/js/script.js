@@ -67,6 +67,14 @@ $(function () {
     $(".nav").slideToggle();
     $("body").toggleClass("darken");
   });
+
+  $('.nav__menu-link').each((_, item) => {
+    $(item).on('click', () => {
+      if ($('.nav').css('position') !== 'absolute') return;
+      $('.nav').slideUp();
+      $("body").removeClass("darken");
+    })
+  })
   // ----- //
 
   // White spots in the buttons

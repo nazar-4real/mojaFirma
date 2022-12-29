@@ -168,7 +168,7 @@
   margin: 0 20px;
 
   &__field {
-    padding: 16px 50px;
+    padding: 16px 60px 16px 50px;
     border: 1px solid rgba(140, 140, 140, 0.2);
     border-radius: 14px;
     font-family: "Roboto";
@@ -219,6 +219,12 @@
     visibility: hidden;
     z-index: 31;
     transition: all 0.5s;
+
+    @media (max-width: 768px) {
+      width: 30px;
+      height: 30px;
+      bottom: -65px;
+    }
 
     &.show {
       transform: translateY(0);
@@ -986,7 +992,7 @@
     transition: all 0.3s;
     &:hover {
       transform: translate(-2px, -2px);
-      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .6));
+      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.6));
     }
   }
 }

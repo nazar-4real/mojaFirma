@@ -168,7 +168,7 @@
     height: 100vh;
     padding: 30px 20px;
     background: #fff;
-    z-index: 30;
+    z-index: 50;
     &__menu {
       flex-direction: column;
     }
@@ -245,6 +245,7 @@
   .search {
     &__field.show {
       width: 100%;
+      padding-left: 20px;
     }
     &__field-close.show {
       right: 15px;

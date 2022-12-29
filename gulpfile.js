@@ -109,4 +109,4 @@ exports.cleanBuild = cleanBuild;
 exports.renderHtml = renderHtml;
 
 exports.build = series(cleanBuild, stylesProd, scripts, images, build, renderHtml);
-exports.default = parallel(series(renderHtml, watchFiles), stylesDev, scripts);
+exports.default = parallel(series(cleanBuild, renderHtml, watchFiles), stylesDev, scripts);
