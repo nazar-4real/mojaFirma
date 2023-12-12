@@ -1,5 +1,4 @@
 $(function () {
-
   // Fixed header when page scrolled && toggle to top button
   window.addEventListener('scroll', () => {
 
@@ -64,8 +63,12 @@ $(function () {
 
   // Show / hide navigation menu
   $(".menu__btn").on("click", function () {
-    $(".nav").slideToggle();
-    $("body").toggleClass("darken");
+    $(".nav").toggleClass('visible').slideToggle();
+
+    document.body.classList.toggle('darken', $('nav.nav').hasClass('visible'))
+
+    $('.search__field').removeClass('show');
+    $('.search__field-close').removeClass('show');
   });
 
   $('.nav__menu-link').each((_, item) => {
@@ -105,6 +108,7 @@ $(function () {
   // Show search field when hovering over the search icon
   $(".search__btn").on("click", function (e) {
     e.preventDefault();
+
     $(".search__field").addClass("show");
     $(".search__field-close").addClass("show");
     $('body').addClass('darken');
@@ -114,6 +118,8 @@ $(function () {
         $(e.target).closest('form').trigger('submit');
       });
     }
+
+    $('nav.nav').removeClass('visible').slideUp();
   });
   // ----- //
 
@@ -141,7 +147,7 @@ $(function () {
 
       setTimeout(() => {
         $(this).find('input').next('.error').fadeOut();
-      }, 1500);
+      }, 1000);
 
       return;
     }
